@@ -58,3 +58,31 @@ type Team struct {
 	Amount   int    `json:"amount"`
 	Position int    `json:"position"`
 }
+
+type TransferOfTeamRequest struct {
+	Team    string   `json:"Team"`
+	Seasons []string `json:"seasons"`
+	Window  string   `json:"window"`
+}
+
+type TransferOfTeamResponse struct {
+	Transfers []Transfer `json:"transfers"`
+}
+
+type Transfer struct {
+	UUID             string  `json:"uuid"`
+	ClubName         string  `json:"club_name"`
+	PlayerName       string  `json:"player_name"`
+	Age              int32   `json:"age"`
+	Position         string  `json:"position"`
+	PositionUUID     string  `json:"position_UUID"`
+	ClubInvolvedName string  `json:"club_involved_name"`
+	Fee              string  `json:"fee"`
+	TransferMovement string  `json:"transfer_movement"`
+	TransferPeriod   string  `json:"transfer_period"`
+	FeeCleaned       float64 `json:"fee_cleaned"`
+	LeagueName       string  `json:"league_name"`
+	LeagueUUID       string  `json:"league_UUID"`
+	Year             int32   `json:"year"`
+	Season           string  `json:"season"`
+}
