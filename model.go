@@ -43,3 +43,18 @@ type ClubFixture struct {
 	Referee          string    `json:"referee"`
 	Season           int32     `json:"season"`
 }
+
+// WorldCupDataJSON represents all world cup data teams
+type WorldCupDataJSON struct {
+	TotalGoals          int32  `json:"total_goals"`
+	HalfTimeGoals       int32  `json:"half_time_goals"`
+	TeamGames           []Team `json:"team_games"`
+	MostSuccessfulTeams []Team `json:"most_successful_teams"`
+}
+
+// Team represents a world cup participated team
+type Team struct {
+	Nation   string `json:"nation"`
+	Amount   int    `json:"amount"`
+	Position int    `json:"position"`
+}
