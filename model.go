@@ -4,12 +4,12 @@ import "time"
 
 // ClubSeasonDataJSONRequest represents the request for the endpoint /club/season
 type ClubSeasonDataJSONRequest struct {
-	League string    `json:"league"`
-	Data   []Fixture `json:"data"`
+	League string         `json:"league"`
+	Data   []ModelFixture `json:"data"`
 }
 
-// Fixture represents a game between two teams
-type Fixture struct {
+// ModelFixture represents a game between two teams
+type ModelFixture struct {
 	TeamOne string `json:"teamOne"`
 	TeamTwo string `json:"teamTwo"`
 }
