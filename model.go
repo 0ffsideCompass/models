@@ -60,7 +60,7 @@ type Team struct {
 }
 
 type TransferOfTeamRequest struct {
-	Team    string   `json:"Team"`
+	Team    string   `json:"team"`
 	Seasons []string `json:"seasons"`
 	Window  string   `json:"window"`
 }
