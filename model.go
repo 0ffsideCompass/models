@@ -66,7 +66,8 @@ type TransferOfTeamRequest struct {
 }
 
 type TransferOfTeamResponse struct {
-	Transfers []Transfer `json:"transfers"`
+	TransfersIn  []Transfer `json:"in"`
+	TransfersOut []Transfer `json:"out"`
 }
 
 type Transfer struct {
