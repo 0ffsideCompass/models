@@ -65,11 +65,6 @@ type TransferOfTeamRequest struct {
 	Window  string   `json:"window"`
 }
 
-type TransferOfTeamResponse struct {
-	TransfersIn  []Transfer `json:"in"`
-	TransfersOut []Transfer `json:"out"`
-}
-
 type Transfer struct {
 	UUID             string  `json:"uuid"`
 	ClubName         string  `json:"club_name"`
@@ -86,4 +81,21 @@ type Transfer struct {
 	LeagueUUID       string  `json:"league_UUID"`
 	Year             int32   `json:"year"`
 	Season           string  `json:"season"`
+}
+
+type TransferOfTeamResponse struct {
+	TransfersIn  []Transfer `json:"in"`
+	TransfersOut []Transfer `json:"out"`
+}
+
+type TransferMetadataResponse struct {
+	UUID     string           `json:"uuid"`
+	Position string           `json:"position"`
+	Season   string           `json:"season"`
+	League   []LeagueMetadata `json:"leagues"`
+}
+
+type LeagueMetadata struct {
+	Name  string   `json:"name"`
+	Teams []string `json:"teams"`
 }
