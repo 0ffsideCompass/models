@@ -89,9 +89,8 @@ type TransferOfTeamResponse struct {
 }
 
 type TransferMetadataResponse struct {
-	UUID     string           `json:"uuid"`
-	Position string           `json:"position"`
-	Season   string           `json:"season"`
+	Position []string         `json:"position"`
+	Season   []string         `json:"season"`
 	League   []LeagueMetadata `json:"leagues"`
 }
 
