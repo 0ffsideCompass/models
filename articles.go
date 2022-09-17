@@ -2,7 +2,7 @@ package models
 
 import "time"
 
-type Fixture struct {
+type Article struct {
 	Title     string    `json:"title"`
 	League    string    `json:"league"`
 	HTML      string    `json:"html"`
@@ -10,6 +10,6 @@ type Fixture struct {
 	Tags      []string  `json:"tags"`
 }
 
-type FixturesByLeague struct {
-	Data []Fixture `json:"data"`
+type Articles struct {
+	Data []Article `json:"data"`
 }
