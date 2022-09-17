@@ -88,3 +88,14 @@ type Transfer struct {
 	Year             int32   `json:"year"`
 	Season           string  `json:"season"`
 }
+
+type TransferMetadataResponse struct {
+	Position []string         `json:"position"`
+	Season   []string         `json:"season"`
+	League   []LeagueMetadata `json:"leagues"`
+}
+
+type LeagueMetadata struct {
+	Name  string   `json:"name"`
+	Teams []string `json:"teams"`
+}
