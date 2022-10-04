@@ -3,16 +3,22 @@ package models
 import "time"
 
 type Article struct {
-	Title          string           `json:"title"`
-	League         string           `json:"league"`
-	HTML           string           `json:"html"`
-	CreatedAt      time.Time        `json:"createdAt"`
-	Tags           []string         `json:"tags"`
-	HistoricalGame []HistoricalGame `json:"historicalGame"`
+	Title     string    `json:"title"`
+	League    string    `json:"league"`
+	HTML      string    `json:"html"`
+	CreatedAt time.Time `json:"createdAt"`
+	Tags      []string  `json:"tags"`
+	Data      []Data    `json:"data"`
 }
 
 type Articles struct {
 	Data []Article `json:"data"`
+}
+
+type Data struct {
+	TeamOne         string           `json:"teamOne"`
+	TeamTwo         string           `json:"teamTwo"`
+	HistoricalGames []HistoricalGame `json:"historicalData"`
 }
 
 type HistoricalGame struct {
