@@ -22,6 +22,7 @@ type Data struct {
 }
 
 type HistoricalGame struct {
+	ID               string    `json:"id"`
 	Div              string    `json:"Div"`
 	Date             time.Time `json:"Date"`
 	HomeTeam         string    `json:"HomeTeam"`
