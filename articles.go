@@ -17,9 +17,16 @@ type Articles struct {
 }
 
 type Data struct {
-	TeamOne         string           `json:"teamOne"`
-	TeamTwo         string           `json:"teamTwo"`
-	HistoricalGames []HistoricalGame `json:"historicalData"`
+	TeamOne               string           `json:"teamOne"`
+	TeamTwo               string           `json:"teamTwo"`
+	TeamOneWins           int              `json:"teamOneWins"`
+	TeamTwoWins           int              `json:"teamTwoWins"`
+	Draws                 int              `json:"draws"`
+	TotalGames            int              `json:"totalGames"`
+	TeamOneWinsPercentage int              `json:"teamOneWinsPercentage"`
+	TeamTwoWinsPercentage int              `json:"teamTwoWinsPercentage"`
+	DrawsPercentage       int              `json:"drawsPercentage"`
+	HistoricalGames       []HistoricalGame `json:"historicalData"`
 }
 
 type HistoricalGame struct {
