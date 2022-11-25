@@ -56,6 +56,6 @@ type ArticleImportanceList struct {
 }
 
 type ArticleImportance struct {
-	ArticleID    string `bson:"article_id"`
-	ArticleTitle string `bson:"article_title"`
+	ID    string `bson:"article_id"`
+	Title string `bson:"article_title"`
 }
