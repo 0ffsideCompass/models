@@ -44,3 +44,18 @@ type HistoricalGame struct {
 	Referee          string    `json:"Referee"`
 	Season           int32     `json:"season"`
 }
+
+type ArticleImportanceList struct {
+	PositionOne   ArticleImportance `json:"positionOne"`
+	PositionTwo   ArticleImportance `json:"positionTwo"`
+	PositionThree ArticleImportance `json:"positionThree"`
+	PositionFour  ArticleImportance `json:"positionFour"`
+	PositionFive  ArticleImportance `json:"positionFive"`
+	PositionSix   ArticleImportance `json:"positionSix"`
+	PositionSeven ArticleImportance `json:"positionSeven"`
+}
+
+type ArticleImportance struct {
+	ArticleID    string `bson:"article_id"`
+	ArticleTitle string `bson:"article_title"`
+}
