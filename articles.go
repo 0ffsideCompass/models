@@ -9,7 +9,7 @@ type Article struct {
 	HTML      string    `json:"html"`
 	CreatedAt time.Time `json:"createdAt"`
 	Tags      []string  `json:"tags"`
-	Data      []Data    `json:"data"`
+	Data      Data      `json:"data"`
 }
 
 type Articles struct {
@@ -17,32 +17,23 @@ type Articles struct {
 }
 
 type Data struct {
-	TeamOne               string           `json:"teamOne"`
-	TeamTwo               string           `json:"teamTwo"`
-	TeamOneWins           int              `json:"teamOneWins"`
-	TeamTwoWins           int              `json:"teamTwoWins"`
-	Draws                 int              `json:"draws"`
-	TotalGames            int              `json:"totalGames"`
-	TeamOneWinsPercentage int              `json:"teamOneWinsPercentage"`
-	TeamTwoWinsPercentage int              `json:"teamTwoWinsPercentage"`
-	DrawsPercentage       int              `json:"drawsPercentage"`
-	HistoricalGames       []HistoricalGame `json:"historicalData"`
+	TeamOne      string    `json:"teamOne"`
+	TeamTwo      string    `json:"teamTwo"`
+	TeamOneStats TeamStats `json:"teamOneStats"`
+	TeamTwoStats TeamStats `json:"teamTwoStats"`
+	LastGame     LastGame  `json:"lastGame"`
 }
 
-type HistoricalGame struct {
-	Div              string    `json:"Div"`
-	Date             time.Time `json:"Date"`
-	HomeTeam         string    `json:"HomeTeam"`
-	AwayTeam         string    `json:"AwayTeam"`
-	FullTimeHomeGoal string    `json:"FullTimeHomeGoal"`
-	FullTimeAwayGoal string    `json:"FullTimeAwayGoal"`
-	Winner           string    `json:"Winner"`
-	HalfTimeHomeGoal string    `json:"HalfTimeHomeGoal"`
-	HalfTimeAwayGoal string    `json:"HalfTimeAwayGoal"`
-	HalfTimeWinner   string    `json:"HalfTimeWinner"`
-	Attendance       string    `json:"Attendance"`
-	Referee          string    `json:"Referee"`
-	Season           int32     `json:"season"`
+// TeamStats represents the stats of a team
+type TeamStats struct {
+	WinsThisSeason     int    `json:"winsThisSeason"`
+	LosesThisSeason    int    `json:"lossesThisSeason"`
+	DrawsThisSeason    int    `json:"drawsThisSeason"`
+	TotalGames         int    `json:"totalGames"`
+	TotalGoals         int    `json:"totalGoals"`
+	TotalGoalsConceded int    `json:"totalGoalsConceded"`
+	CleanSheets        int    `json:"cleanSheets"`
+	Form               string `json:"form"`
 }
 
 type ArticleImportanceList struct {
