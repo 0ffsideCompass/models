@@ -9,6 +9,7 @@ type Article struct {
 	HTML      string    `json:"html"`
 	CreatedAt time.Time `json:"createdAt"`
 	Tags      []string  `json:"tags"`
+	IMG       string    `json:"img"`
 	Data      Data      `json:"data"`
 }
 
