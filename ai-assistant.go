@@ -6,7 +6,8 @@ type AskRequest struct {
 }
 
 type AskResponse struct {
-	Text string `json:"text"`
+	Text    string   `json:"text"`
+	Metadat []string `json:"metadata"`
 }
 
 type PromptHistory struct {
