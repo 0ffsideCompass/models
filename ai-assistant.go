@@ -6,8 +6,8 @@ type AskRequest struct {
 }
 
 type AskResponse struct {
-	Text    string   `json:"text"`
-	Metadat []string `json:"metadata"`
+	Text     string   `json:"text"`
+	Metadata []string `json:"metadata"`
 }
 
 type PromptHistory struct {
@@ -15,8 +15,9 @@ type PromptHistory struct {
 }
 
 type PromptReqResponse struct {
-	Prompt   string `json:"prompt"`
-	Response string `json:"response"`
+	Prompt   string   `json:"prompt"`
+	Response string   `json:"response"`
+	Metadata []string `json:"metadata"`
 }
 
 type AskCoverageRequest struct {
