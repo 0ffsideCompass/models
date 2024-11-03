@@ -1,6 +1,7 @@
 package models
 
 import (
+	"fmt"
 	"time"
 
 	"go.mongodb.org/mongo-driver/bson/primitive"
@@ -55,4 +56,47 @@ type Participant struct {
 	Name     string                 `bson:"name" json:"name"`
 	Role     string                 `bson:"role,omitempty" json:"role,omitempty"`
 	Metadata map[string]interface{} `bson:"metadata,omitempty" json:"metadata,omitempty"`
+}
+
+type GeneratedContentType string
+
+const (
+	GeneratedContentTypeTweet   GeneratedContentType = "tweet"
+	GeneratedContentTypeArticle GeneratedContentType = "article"
+)
+
+type GenerateRequest struct {
+	Prompt string               `json:"prompt"`
+	Lang   string               `json:"lang"`
+	Type   GeneratedContentType `json:"type"`
+}
+
+// Validate checks if the GenerateRequest has a valid Type
+func (req GenerateRequest) Validate() error {
+	switch req.Type {
+	case GeneratedContentTypeTweet, GeneratedContentTypeArticle:
+		return nil
+	default:
+		return fmt.Errorf("invalid content type: %s", req.Type)
+	}
+}
+
+type GeneratedTweet struct {
+	Text string    `json:"text"`
+	Tags string    `json:"tags"`
+	Date time.Time `json:"date"`
+}
+
+type GeneratedArticle struct {
+	Title   string `json:"title"`
+	Body    string `json:"body"`
+	Summary string `json:"summary"`
+	Tags    string `json:"tags"`
+}
+
+// GenerateResponse represents a response containing generated content
+type GenerateResponse struct {
+	Type    GeneratedContentType `json:"type"`
+	Tweet   *GeneratedTweet      `json:"tweet,omitempty"`
+	Article *GeneratedArticle    `json:"article,omitempty"`
 }
