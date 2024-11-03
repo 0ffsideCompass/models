@@ -83,15 +83,15 @@ func (req GenerateRequest) Validate() error {
 
 type GeneratedTweet struct {
 	Text string    `json:"text"`
-	Tags string    `json:"tags"`
+	Tags []string  `json:"tags"`
 	Date time.Time `json:"date"`
 }
 
 type GeneratedArticle struct {
-	Title   string `json:"title"`
-	Body    string `json:"body"`
-	Summary string `json:"summary"`
-	Tags    string `json:"tags"`
+	Title   string   `json:"title"`
+	Body    string   `json:"body"`
+	Summary string   `json:"summary"`
+	Tags    []string `json:"tags"`
 }
 
 // GenerateResponse represents a response containing generated content
