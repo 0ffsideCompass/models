@@ -105,7 +105,8 @@ type GeneratedArticle struct {
 
 // GenerateResponse represents a response containing generated content
 type GenerateResponse struct {
-	Type    GeneratedContentType `json:"type"`
-	Tweet   *GeneratedTweet      `json:"tweet,omitempty"`
-	Article *GeneratedArticle    `json:"article,omitempty"`
+	Type                 GeneratedContentType           `json:"type"`
+	Tweet                *GeneratedTweet                `json:"tweet,omitempty"`
+	Article              *GeneratedArticle              `json:"article,omitempty"`
+	PodcastArchiveSeries *GeneratedPodcastArchiveSeries `json:"podcastArchiveSeries,omitempty"`
 }
