@@ -63,6 +63,7 @@ type GeneratedContentType string
 const (
 	GeneratedContentTypeTweet   GeneratedContentType = "tweet"
 	GeneratedContentTypeArticle GeneratedContentType = "article"
+	GeneratedContentTypePodcast GeneratedContentType = "podcast"
 )
 
 type GenerateRequest struct {
@@ -74,7 +75,7 @@ type GenerateRequest struct {
 // Validate checks if the GenerateRequest has a valid Type
 func (req GenerateRequest) Validate() error {
 	switch req.Type {
-	case GeneratedContentTypeTweet, GeneratedContentTypeArticle:
+	case GeneratedContentTypeTweet, GeneratedContentTypeArticle, GeneratedContentTypePodcast:
 		return nil
 	default:
 		return fmt.Errorf("invalid content type: %s", req.Type)
