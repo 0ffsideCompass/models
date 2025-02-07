@@ -61,9 +61,9 @@ type Participant struct {
 type GeneratedContentType string
 
 const (
-	GeneratedContentTypeTweet   GeneratedContentType = "tweet"
-	GeneratedContentTypeArticle GeneratedContentType = "article"
-	GeneratedContentTypePodcast GeneratedContentType = "podcast"
+	GeneratedContentTypeTweet                      GeneratedContentType = "tweet"
+	GeneratedContentTypeArticle                    GeneratedContentType = "article"
+	GeneratedContentTypePodcastArchiveSeriesScript GeneratedContentType = "podcastArchiveSeriesScript"
 )
 
 type GenerateRequest struct {
@@ -75,11 +75,19 @@ type GenerateRequest struct {
 // Validate checks if the GenerateRequest has a valid Type
 func (req GenerateRequest) Validate() error {
 	switch req.Type {
-	case GeneratedContentTypeTweet, GeneratedContentTypeArticle, GeneratedContentTypePodcast:
+	case GeneratedContentTypeTweet, GeneratedContentTypeArticle, GeneratedContentTypePodcastArchiveSeriesScript:
 		return nil
 	default:
 		return fmt.Errorf("invalid content type: %s", req.Type)
 	}
+}
+
+type GeneratedPodcastArchiveSeries struct {
+	Title        string    `json:"title"`
+	Script       string    `json:"script"`
+	Tags         []string  `json:"tags"`
+	Date         time.Time `json:"date"`
+	ShortSummary string    `json:"short_summary"`
 }
 
 type GeneratedTweet struct {
