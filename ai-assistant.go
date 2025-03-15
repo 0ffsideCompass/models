@@ -17,6 +17,15 @@ type AskResponse struct {
 	Metadata []string `json:"metadata"`
 }
 
+type ChatHistory struct {
+	Chats []Chat `json:"chats"`
+}
+
+type Chat struct {
+	ChatID  string              `json:"chat_id"`
+	Prompts []PromptReqResponse `json:"prompts"`
+}
+
 type PromptHistory struct {
 	Prompts []PromptReqResponse `json:"prompts"`
 }
