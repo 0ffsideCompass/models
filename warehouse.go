@@ -19,10 +19,10 @@ type DataWarehouseArticlesResponse struct {
 
 // DataWarehouseCreatePodcastRequest represents the request to create a podcast
 type DataWarehouseCreatePodcastRequest struct {
-	Title       string   `json:"title"`
-	Description string   `json:"description"`
-	URL         string   `json:"url"`
-	Tags        []string `json:"tags"`
+	Title      string   `json:"title"`
+	ExternalID string   `json:"external_id"`
+	URL        string   `json:"url"`
+	Tags       []string `json:"tags"`
 }
 
 // DataWarehousePodcastsResponse represents the API response for multiple podcasts
