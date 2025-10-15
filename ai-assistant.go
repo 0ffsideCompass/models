@@ -15,6 +15,7 @@ type AskRequest struct {
 type AskResponse struct {
 	Text     string   `json:"text"`
 	Metadata []string `json:"metadata"`
+	ChatID   string   `json:"chat_id,omitempty"`
 }
 
 type ChatHistory struct {
