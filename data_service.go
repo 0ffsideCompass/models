@@ -56,7 +56,7 @@ type GetFixtureResponse struct {
 	AwayLineup      LinueupStuct `json:"away_lineup"`
 	HomeCoach       string       `json:"home_coach"`
 	AwayCoach       string       `json:"away_coach"`
-	Events          []Event      `json:"events"`
+	Events          []MatchEvent `json:"events"`
 	Statistics      []Statistic  `json:"statistics"`
 	HomePlayerStats PlayerStats  `json:"home_player_stats"`
 	AwayPlayerStats PlayerStats  `json:"away_player_stats"`
@@ -68,7 +68,7 @@ type LinueupStuct struct {
 	Substitutes []Player `json:"substitutes"`
 }
 
-type Event struct {
+type MatchEvent struct {
 	Time struct {
 		Elapsed int         `json:"elapsed"`
 		Extra   interface{} `json:"extra"`
